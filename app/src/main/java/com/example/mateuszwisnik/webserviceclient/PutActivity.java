@@ -63,7 +63,6 @@ public class PutActivity extends AppCompatActivity {
                     JSONObject postData = new JSONObject(data);
                     httpsURLConnection.setDoOutput(true);
                     httpsURLConnection.getOutputStream().write(postData.toString().getBytes());
-                    Log.e("Response" , String.valueOf(httpsURLConnection.getResponseCode()));
                     if(httpsURLConnection.getResponseCode() == 200) {
                         runOnUiThread(new Runnable() {
                             @Override
@@ -74,7 +73,7 @@ public class PutActivity extends AppCompatActivity {
                         httpsURLConnection.disconnect();
                     }
                 } catch (Exception exception) {
-                    exception.printStackTrace();
+                    Log.e("Something went wrong: ", exception.getMessage());
                 }
             }
         });

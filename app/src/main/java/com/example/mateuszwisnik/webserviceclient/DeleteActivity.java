@@ -47,7 +47,6 @@ public class DeleteActivity extends AppCompatActivity {
                     URL url = new URL(MainActivity.apiEndpoint + "/" + editTextPostId.getText().toString());
                     HttpsURLConnection httpsURLConnection = (HttpsURLConnection) url.openConnection();
                     httpsURLConnection.setRequestMethod("DELETE");
-                    Log.e("Response", httpsURLConnection.getResponseMessage());
                     if(httpsURLConnection.getResponseCode() == 200) {
                         runOnUiThread(new Runnable() {
                             @Override
@@ -58,7 +57,7 @@ public class DeleteActivity extends AppCompatActivity {
                         httpsURLConnection.disconnect();
                     }
                 } catch (Exception exception) {
-                    exception.printStackTrace();
+                    Log.e("Something went wrong: ", exception.getMessage());
                 }
             }
         });

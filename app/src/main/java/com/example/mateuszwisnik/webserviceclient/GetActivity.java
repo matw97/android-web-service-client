@@ -4,6 +4,7 @@ import android.os.AsyncTask;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.JsonReader;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -56,7 +57,7 @@ public class GetActivity extends AppCompatActivity {
                         httpsURLConnection.disconnect();
                     }
                 } catch (Exception exception) {
-                    exception.printStackTrace();
+                    Log.e("Something went wrong: ", exception.getMessage());
                 }
             }
         });
@@ -83,7 +84,7 @@ public class GetActivity extends AppCompatActivity {
                         }
                     }
                 } catch (Exception exception) {
-                    exception.printStackTrace();
+                    Log.e("Something went wrong: ", exception.getMessage());
                 }
             }
         });

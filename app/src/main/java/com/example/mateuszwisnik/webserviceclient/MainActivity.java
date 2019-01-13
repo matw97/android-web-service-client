@@ -8,7 +8,7 @@ import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity {
 
-    public static final String apiEndpoint = "https://jsonplaceholder.typicode.com/posts";
+    static final String apiEndpoint = "https://jsonplaceholder.typicode.com/posts";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
